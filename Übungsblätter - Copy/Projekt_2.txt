@@ -1,0 +1,29 @@
+Aufgabe 1
+a) importieren Sie den Datensatz XXX 
+b) Zeigen Sie den Datensatz im Notebook 
+c) Zeigen Sie die Statistik des Datensatzes
+d) In der Spalte "Weather" (Zeilvariable) haben Sie Einträge mir Rain/No Rain, ersetzen Sie diese mit No Rain zu 0 und Rain zu 1
+e) Plotten Sie die Daten 
+
+Aufgabe 2
+a) Stellen Sie den Datensatz als Scatterplot dar
+b) Erzeugen Sie ein Entscheidungsbaum mit verschiedenen Tiefen und wählen das Bester Ergebnis
+c) Plotten Sie Ihr Ergebnis 
+d) Schreiben Sie eine Methode um die Besten zwei Ergebnisse in einem Entscheidungsbaum zu zeigen
+
+Aufgabe 3
+a) Erzeugen Sie mit Ensemple mehrere Bäume um den Datensatz zu trainieren 
+b) Plotten Sie den Baum
+c) Was Sie die besten zwei Merkmale nach denen Sie trennen 
+d) Plotten Sie wie der Datensatz nach dem Training getrennt ist
+
+Beispielcode zu 3 c):
+plt.figure(figsize=(20,10))
+plot_tree(wine_tree, filled=True, rounded=True, class_names= wine.target_names, feature_names=X.columns) 
+plt.show()
+
+Beispielcode zu 3 d):
+plt.figure(figsize=(20, 10))
+DecisionBoundaryDisplay.from_estimator(estimator= wine_tree_3, X=X_reduced, xlabel="alcohol", ylabel="proline")
+plt.scatter(X_reduced["alcohol"], X_reduced["proline"], c=y, edgecolors='k')
+plt.show()
